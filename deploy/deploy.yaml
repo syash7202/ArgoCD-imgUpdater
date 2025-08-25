@@ -4,11 +4,8 @@ metadata:
   name: demo-app
   labels:
     app: demo-app
-  annotations:
-    argocd-image-updater.argoproj.io/image-list: demo-app=docker.io/syash7202/demo-app
-    argocd-image-updater.argoproj.io/demo-app.update-strategy: latest
 spec:
-  replicas: 2
+  replicas: 1
   selector:
     matchLabels:
       app: demo-app
