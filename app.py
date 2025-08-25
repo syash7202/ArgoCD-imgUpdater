@@ -4,7 +4,7 @@ app = Flask(__name__)
 
 @app.route("/")
 def home():
-    return "Hello from ArgoCD Image Updater Demo!"
+    return "Hello from ArgoCD Image Updater Demo! hello from update!!!!"
 
 if __name__ == "__main__":
     app.run(host="0.0.0.0", port=5000)
