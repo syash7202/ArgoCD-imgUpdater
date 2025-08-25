@@ -1,0 +1,20 @@
+apiVersion: argoproj.io/v1alpha1
+kind: Application
+metadata:
+  name: demo-app
+  namespace: argocd
+  annotations:
+    argocd-image-updater.argoproj.io/image-list: demo-app=docker.io/syash7202/demo-app:latest
+    argocd-image-updater.argoproj.io/demo-app.update-strategy: latest
+    argocd-image-updater.argoproj.io/demo-app.pull-secret: pullsecret:argocd/dockerhub-creds
+spec:
+  project: default
+  source:
+    repoURL: https://github.com/syash7202/ArgoCD-imgUpdater.git
+    targetRevision: main
+    path: overlays/dev
+  destination:
+    server: https://kubernetes.default.svc
+    namespace: default
+  syncPolicy:
+    automated: {}
