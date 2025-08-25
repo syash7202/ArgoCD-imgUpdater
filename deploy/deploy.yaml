@@ -16,6 +16,6 @@ spec:
     spec:
       containers:
         - name: demo-app
-          image: syash7202/demo-app:v20250825082937
+          image: syash7202/demo-app:v20250825092606
           ports:
             - containerPort: 5000
